@@ -1,0 +1,2054 @@
+:root{
+
+    --surface:#0F1726;
+
+    --muted:#9AA8B8;
+
+    --primary:#52F2B8;
+
+    --text:#F8FAFC;
+
+}
+
+
+/* ==========================================
+                NAVBAR
+========================================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:82px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 clamp(16px,4vw,7%);
+
+  background:rgba(5,8,22,.72);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    z-index:1000;
+
+    transition:.4s ease;
+
+}
+
+header::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:radial-gradient(circle at center,
+    rgba(82,242,184,.04),
+    transparent 70%);
+
+    pointer-events:none;
+
+}
+
+.logo{
+
+    font-family:"Sora",sans-serif;
+
+    font-size:clamp(.72rem,.95vw,.95rem);
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+    letter-spacing:clamp(2px,.5vw,7px);
+
+    color:#F8FAFC;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    z-index:2;
+
+}
+
+.logo:hover{
+
+    letter-spacing:8px;
+
+}
+
+nav{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:clamp(12px,2vw,42px);
+
+    flex-wrap:nowrap;
+
+    z-index:2;
+
+}
+
+nav a{
+
+    position:relative;
+
+    color:#8796AA;
+
+    text-decoration:none;
+
+    text-transform:uppercase;
+
+    font-size:clamp(.62rem,.75vw,.78rem);
+
+    letter-spacing:clamp(.5px,.15vw,2px);
+
+    white-space: nowrap;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+nav a:hover{
+
+    color:#FFFFFF;
+
+}
+
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:#52F2B8;
+
+    transform:translateX(-50%);
+
+    transition:.35s;
+
+    border-radius:20px;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+html{
+
+    scroll-behavior:smooth;
+
+}
+body{
+
+    font-family:'Inter',sans-serif;
+
+   background:
+
+linear-gradient(
+180deg,
+
+#040715,
+
+#060C1B,
+
+#040816,
+
+#02040D
+
+);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    line-height:1.6;
+
+}
+
+/* ==========================================
+            BACKGROUND
+========================================== */
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(70,170,255,.16),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 25% 80%,
+            rgba(82,242,184,.08),
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(0,90,255,.08),
+            transparent 30%
+        );
+
+    pointer-events:none;
+
+    z-index:-3;
+
+}
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(
+
+        rgba(255,255,255,.02) 1px,
+
+        transparent 1px
+
+    ),
+
+    linear-gradient(
+
+        90deg,
+
+        rgba(255,255,255,.02) 1px,
+
+        transparent 1px
+
+    );
+
+    background-size:90px 90px;
+
+    opacity:.35;
+
+    z-index:-2;
+
+    pointer-events:none;
+
+    mask-image:radial-gradient(circle,white 20%,transparent 90%);
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    flex-direction:column;
+
+    position:relative;
+
+    padding:120px 8% 80px;
+
+}
+
+.hero-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+}
+
+.eyebrow{
+
+    color:#52F2B8;
+
+    letter-spacing:7px;
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    margin-bottom:40px;
+
+}
+
+.hero h1{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin:0;
+
+    line-height:.9;
+
+}
+
+.title-top{
+
+    font-family:"Sora",sans-serif;
+
+    font-size:7rem;
+
+    font-weight:800;
+
+    color:#F8FAFC;
+
+    letter-spacing:-4px;
+
+}
+
+.orb-wrapper{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+     transition:transform .6s cubic-bezier(.22,1,.36,1);
+
+}
+
+.orb-wrapper img{
+
+    width:340px;
+
+    filter:
+        drop-shadow(0 0 35px rgba(82,242,184,.22))
+        drop-shadow(0 0 90px rgba(82,242,184,.12));
+
+    transition:
+        transform .6s cubic-bezier(.22,1,.36,1),
+        filter .6s;
+}
+.orb-float{
+    animation: orbFloat 8s ease-in-out infinite;
+}
+
+.orb-wrapper.pop{
+    animation: orbPop .65s cubic-bezier(.22,1,.36,1);
+}
+
+  
+
+.orb-wrapper::before{
+
+    content:"";
+    transform:scale(1.2);
+
+    opacity:1;
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+    border-radius:50%;   
+
+    background:
+    radial-gradient(circle,
+    rgba(82,242,184,.16),
+    transparent 70%);
+
+    filter:blur(65px);
+
+    
+    transition:.6s;
+
+
+    z-index:-1;
+
+}
+
+@keyframes orbPop{
+
+    0%{
+        transform:translateY(0) scale(1);
+    }
+
+    20%{
+        transform:translateY(0) scale(1.18);
+    }
+
+    45%{
+        transform:translateY(0) scale(1.28);
+    }
+
+    70%{
+        transform:translateY(0) scale(1.14);
+    }
+
+    100%{
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+
+
+@keyframes orbFloat{
+
+    0%,100%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+.orb-wrapper:hover img{
+
+  transform:scale(1.15);
+    transform:scale(1.04);
+
+    filter:
+        drop-shadow(0 0 45px rgba(82,242,184,.35))
+        drop-shadow(0 0 120px rgba(82,242,184,.18));
+
+}
+
+
+.orb-expanded:hover img{
+
+    transform:
+        scale(1.18)
+        rotate(4deg);
+
+}
+.title-bottom{
+
+    font-family:"Sora",sans-serif;
+
+    font-size:7.4rem;
+
+    font-weight:800;
+
+    color:#F8FAFC;
+
+    letter-spacing:-5px;
+
+}
+
+.description{
+
+    max-width:720px;
+
+    margin-top:50px;
+
+    color:#A5B4C7;
+
+    font-size:1.18rem;
+
+    line-height:1.9;
+
+}
+
+.hero-btn{
+
+    margin-top:45px;
+
+    padding:16px 42px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(82,242,184,.25);
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+    backdrop-filter:blur(14px);
+
+}
+
+.hero-btn:hover{
+
+    background:rgba(82,242,184,.08);
+
+    transform:translateY(-4px);
+
+}
+
+.scroll{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#7D8DA5;
+
+    letter-spacing:4px;
+
+    font-size:.72rem;
+
+    text-transform:uppercase;
+
+}
+
+/* ==========================================
+         SECTION DEFAULTS
+========================================== */
+
+section{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:120px 40px;
+    box-sizing:border-box;
+}
+.section-heading{
+
+    margin-bottom:70px;
+
+    max-width:720px;
+
+}
+
+.section-tag{
+
+   
+    color:#63F2C4;
+
+    letter-spacing:7px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    font-size:.75rem;
+
+    margin-bottom:16px;
+
+}
+
+.section-heading h2{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:3rem;
+
+    line-height:1.2;
+        color:#F4F7FB;
+
+    font-weight:700;
+
+}
+
+/* ==========================================
+           ANIMATION
+========================================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media(max-width:1000px)
+{
+
+
+}
+
+.hero{
+    text-align:center;
+}
+
+.hero-text{
+
+margin:auto;
+
+}
+
+.hero-image{
+
+    position:relative;
+
+    z-index:1;
+
+  opacity:0.82;
+
+  transform:translateX(40px);
+
+}
+.hero-image::before{
+
+    z-index:-2;
+
+}
+
+.hero-text{
+
+    position:relative;
+
+    z-index:5;
+}
+/* ==========================================
+            THE CHALLENGE
+========================================== */
+.section-description{
+
+    color:var(--muted);
+
+    max-width:720px;
+
+    margin-top:22px;
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+}
+
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:55px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.025);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    backdrop-filter:blur(18px);
+
+    transition:.45s ease;
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top right,
+
+    rgba(82,242,184,.08),
+
+    transparent 55%);
+
+    opacity:0;
+
+    transition:.45s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:rgba(82,242,184,.28);
+
+    box-shadow:
+
+    0 25px 80px rgba(0,0,0,.45);
+
+}
+
+.card:hover::before{
+
+    opacity:1;
+
+}
+
+.card-number{
+
+    display:block;
+
+    font-size:4rem;
+
+    font-family:"Space Grotesk";
+
+    color:rgba(255,255,255,.06);
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.card h3{
+
+
+    color:#F3F6FB;
+    font-family:"Space Grotesk";
+
+    font-size:2rem;
+
+    margin-bottom:32px;
+
+}
+
+.card p{
+
+   color:#9AA8B8;
+
+    line-height:1.9;
+
+    max-width:420px;
+
+}
+
+.challenge-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:32px;
+
+    width:100%;
+
+    margin:60px auto 0;
+
+}
+/* ==========================================
+            WHY IT MATTERS
+========================================== */
+
+.importance-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:28px;
+
+}
+
+.info-box{
+
+    background:var(--surface);
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    padding:38px;
+
+    transition:.35s;
+
+}
+
+.info-box:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(119,191,255,.35);
+
+}
+
+.info-box h3{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:1.5rem;
+
+    margin-bottom:14px;
+
+}
+
+.info-box p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+
+
+/* ==========================================
+                RESEARCH
+========================================== */
+
+.research-grid{
+
+    display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:32px;
+
+}
+
+.research-card{
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    min-height:280px;
+
+    padding:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+    
+    gap:18px;
+
+    transition:.4s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.research-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+    to top,
+    rgba(82,242,184,.12),
+    transparent);
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.research-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(82,242,184,.35);
+
+}
+
+.research-card:hover::before{
+
+    opacity:1;
+
+}
+
+.research-card h3{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:1.8rem;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==========================================
+              PERSPECTIVE
+========================================== */
+
+#perspective{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    min-height:80vh;
+
+}
+
+.quote{
+
+    max-width:950px;
+
+}
+
+.quote h2{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:3.5rem;
+
+    font-weight:500;
+
+    line-height:1.35;
+
+    color:white;
+
+}
+
+/* ==========================================
+              FUTURE
+========================================== */
+
+.future-grid{
+
+    display:grid;
+
+   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:28px;
+
+}
+
+.future-card{
+
+
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.04),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:42px;
+
+    min-height:280px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    gap:18px;
+
+    transition:.4s;
+}
+
+
+.future-card h3{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:1.6rem;
+
+    color:#F8FAFC;
+
+    margin:0;
+
+}
+
+.future-card p{
+
+    color:#AAB7C8;
+
+    line-height:1.8;
+
+    margin:0;
+
+}
+
+
+
+.future-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(119,191,255,.35);
+
+}
+
+/* ==========================================
+                FOOTER
+========================================== */
+
+footer{
+
+    margin-top:60px;
+
+    padding:110px 7%;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
+    background:#04060F;
+
+}
+
+footer h2{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:2.5rem;
+
+ margin-bottom:32px;
+
+}
+
+footer p{
+
+    color:var(--muted);
+
+    margin-bottom:10px;
+
+}
+
+footer small{
+
+    color:#64748B;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
+/* ==========================================
+              SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#050816;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#1E293B;
+
+    border-radius:100px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary);
+
+}
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media(max-width:900px){
+
+.research-grid,
+.future-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.quote h2{
+
+font-size:2.2rem;
+
+}
+
+.research-card,
+.future-card{
+
+padding:30px;
+
+}
+
+.logo{
+
+    color:#F8FAFC;
+
+    font-size:.95rem;
+
+    letter-spacing:6px;
+
+}
+nav a{
+
+    color:#7F90A5;
+
+    font-weight:500;
+
+}
+nav a:hover{
+
+    color:#FFFFFF;
+
+}
+}
+
+
+
+
+.challenge-grid,
+.importance-grid,
+.research-grid,
+.future-grid{
+
+    width:100%;
+    max-width:1100px;
+    margin:60px auto 0;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:32px;
+
+    align-items:stretch;
+}
+/*=====================================
+          PREMIUM GLASS CARD
+=====================================*/
+
+.card,
+.info-box,
+.research-card,
+.future-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:38px;
+
+    min-height:320px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.035);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+    0 10px 45px rgba(0,0,0,.30),
+
+    inset 0 1px rgba(255,255,255,.08);
+
+    transition:
+
+    transform .45s cubic-bezier(.22,1,.36,1),
+
+    box-shadow .45s,
+
+    border-color .45s;
+
+}
+
+
+.card::before,
+.info-box::before,
+.research-card::before,
+.future-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-100%;
+
+left:-50%;
+
+width:220%;
+
+height:220%;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(82,242,184,.08),
+
+transparent 65%
+
+);
+
+opacity:0;
+
+transition:.6s;
+
+pointer-events:none;
+
+} 
+.card:hover,
+.info-box:hover,
+.research-card:hover,
+.future-card:hover{
+
+transform:
+
+translateY(-10px)
+
+scale(1.02);
+
+border-color:
+
+rgba(82,242,184,.45);
+
+box-shadow:
+
+0 18px 70px rgba(0,0,0,.45),
+
+0 0 30px rgba(82,242,184,.12);
+
+}
+.card:hover::before,
+.info-box:hover::before,
+.research-card:hover::before,
+.future-card:hover::before{
+
+opacity:1;
+
+}
+.card h3,
+.info-box h3,
+.research-card h3,
+.future-card h3{
+
+transition:.35s;
+
+}
+
+.card:hover h3,
+.info-box:hover h3,
+.research-card:hover h3,
+.future-card:hover h3{
+
+color:#52F2B8;
+
+letter-spacing:.5px;
+
+}
+
+
+.card h3,
+.info-box h3,
+.research-card h3,
+.future-card h3{
+
+    color:#F8FAFC;
+
+}
+
+.card p,
+.info-box p{
+
+    color:#A7B6C7;
+
+}
+
+.research-card,
+.future-card{
+
+    color:#F8FAFC;
+
+}
+.hero-quote{
+
+    position:absolute;
+
+    bottom:120px;
+
+    right:80px;
+
+    text-align:right;
+
+    max-width:260px;
+
+}
+
+.hero-quote .greek{
+
+    font-family:"Sora",sans-serif;
+
+    font-size:.95rem;
+
+    color:rgba(255,255,255,.32);
+
+    margin-bottom:6px;
+
+    letter-spacing:1px;
+
+}
+
+.hero-quote .translation{
+
+    color:rgba(255,255,255,.62);
+
+    font-size:.82rem;
+
+    font-style:italic;
+
+}
+
+.hero-quote span{
+
+    color:rgba(255,255,255,.35);
+
+    font-size:.75rem;
+
+}
+.mini-quote{
+
+    color:rgba(255,255,255,.45);
+
+    font-style:italic;
+
+    margin-bottom:14px;
+
+    font-size:.9rem;
+
+}
+
+.mini-quote span{
+
+    color:rgba(255,255,255,.25);
+
+}
+.easter-egg{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    height:120px;
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:.72rem;
+
+    letter-spacing:12px;
+
+    color:rgba(255,255,255,.15);
+
+    transition:.35s;
+    opacity: 10%;
+
+}
+
+.research-quote{
+
+    margin-top:0px;
+
+    max-width:420px;
+
+    margin-bottom:70px;
+
+}
+
+.research-quote p{
+
+    color:rgba(255,255,255,.58);
+
+    font-style:italic;
+
+    line-height:1.8;
+
+}
+
+.research-quote span{
+
+    color:rgba(255,255,255,.3);
+
+}
+/* ==========================================
+            PHILOSOPHY
+========================================== */
+
+.philosophy{
+
+    padding:120px 40px;
+
+    min-height:auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:140px 8%;
+
+    position:relative;
+        max-width:900px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+}
+
+.philosophy::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+    rgba(82,242,184,.08),
+    transparent 70%);
+
+    filter:blur(60px);
+
+    z-index:-1;
+
+}
+
+.philosophy-box{
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+.philosophy h2{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:3.8rem;
+
+    font-weight:700;
+
+    color:#F8FAFC;
+
+    letter-spacing:2px;
+
+    margin-bottom:30px;
+
+    line-height:1.2;
+
+}
+
+.philosophy p{
+
+    font-size:1.45rem;
+
+    color:#B8C4D4;
+
+    font-style:italic;
+
+    margin-bottom:20px;
+
+    letter-spacing:.5px;
+
+}
+
+.philosophy span{
+
+    color:#7C8A9D;
+
+    font-size:.9rem;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+}
+.reflection-tag{
+
+    display:block;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#52F2B8;
+
+    letter-spacing:8px;
+
+    text-transform:uppercase;
+
+    font-size:.75rem;
+
+    font-weight:600;
+
+    margin:0 auto 40px;
+
+}
+
+/* ==========================================
+              MINI QUOTES
+========================================== */
+
+.mini-quote{
+
+    width:100%;
+
+    max-width:700px;
+
+    margin:60px auto;
+
+    text-align:center;
+
+    font-size:.9rem;
+
+    font-style:italic;
+
+    color:#8D95A5;
+
+    line-height:1.8;
+
+    opacity:.75;
+
+}
+
+.mini-quote span{
+
+    display:block;
+
+    margin-top:12px;
+
+    color:#6E7788;
+
+    letter-spacing:2px;
+
+    font-size:.75rem;
+
+    text-transform:uppercase;
+
+}
+
+.mini-quote:hover{
+
+    color:#D8E5F5;
+
+}
+
+.mini-quote:hover span{
+
+    color:#52F2B8;
+
+}
+
+/*==========================================
+              TIMELINE
+==========================================*/
+/*==========================================
+              TIMELINE
+==========================================*/
+
+.timeline{
+
+    position:relative;
+
+    max-width:900px;
+
+    margin:70px auto 0;
+
+    padding-left:55px;
+
+    border-left:2px solid rgba(82,242,184,.25);
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    margin-bottom:70px;
+
+}
+
+.timeline-item:last-child{
+
+    margin-bottom:0;
+
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-64px;
+
+    top:8px;
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:#52F2B8;
+
+    box-shadow:
+        0 0 18px rgba(82,242,184,.45);
+
+}
+
+.timeline-item span{
+
+    display:block;
+
+    color:#52F2B8;
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
+
+}
+
+.timeline-item h3{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:1.55rem;
+
+    color:#F8FAFC;
+
+    margin-bottom:14px;
+
+}
+
+.timeline-item p{
+
+    color:#AAB7C8;
+
+    line-height:1.8;
+
+    max-width:620px;
+
+}
+
+.timeline-item:hover{
+
+    transform:translateX(8px);
+
+    transition:.35s ease;
+
+}
+
+.timeline-item:hover::before{
+
+    transform:scale(1.25);
+
+    box-shadow:
+        0 0 25px rgba(82,242,184,.75);
+
+}
+
+.timeline-item:hover h3{
+
+    color:#52F2B8;
+
+}
+
+/*==========================================
+            SPACE ENGINE
+==========================================*/
+
+#bgCanvas{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+}
+
+body::before,
+body::after{
+    z-index:-1;
+}
+
+header,
+section,
+footer{
+    position:relative;
+    z-index:2;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+header{
+    height:72px;
+    padding:0 20px;
+}
+
+.logo{
+    font-size:.75rem;
+    letter-spacing:3px;
+}
+
+nav{
+    display:none;
+}
+
+/* You'll replace this with a hamburger later */
+
+}
+@media (max-width:768px){
+
+.hero{
+    min-height:100svh;
+    padding:120px 20px 70px;
+}
+
+.title-top{
+    font-size:3.3rem;
+    letter-spacing:-2px;
+}
+
+.title-bottom{
+    font-size:3.4rem;
+    letter-spacing:-2px;
+}
+
+.orb-wrapper img{
+    width:180px;
+}
+
+.orb-wrapper::before{
+    width:240px;
+    height:240px;
+}
+
+.description{
+    font-size:1rem;
+    line-height:1.7;
+    margin-top:28px;
+}
+
+.hero-quote{
+    display:none;
+}
+
+.scroll{
+    bottom:18px;
+    font-size:.65rem;
+}
+
+}
+@media (max-width:768px){
+
+section{
+    padding:80px 20px;
+}
+
+.section-heading h2{
+    font-size:2rem;
+}
+
+.card,
+.info-box,
+.research-card,
+.future-card{
+
+    min-height:auto;
+    padding:24px;
+    border-radius:22px;
+
+}
+
+.card h3,
+.info-box h3,
+.research-card h3,
+.future-card h3{
+
+    font-size:1.35rem;
+
+}
+
+.card p,
+.info-box p,
+.research-card p,
+.future-card p{
+
+    font-size:.95rem;
+    line-height:1.8;
+
+}
+
+.challenge-grid,
+.importance-grid,
+.research-grid,
+.future-grid{
+
+    grid-template-columns:1fr;
+    gap:20px;
+
+}
+
+}
+@media (max-width:768px){
+
+.timeline{
+
+    padding-left:26px;
+
+}
+
+.timeline-item::before{
+
+    left:-35px;
+
+}
+
+.timeline-item h3{
+
+    font-size:1.2rem;
+
+}
+
+}
+@media (max-width:768px){
+
+.philosophy{
+
+    padding:90px 20px;
+
+}
+
+.philosophy h2{
+
+    font-size:2.2rem;
+
+}
+
+.philosophy p{
+
+    font-size:1.1rem;
+
+}
+
+}
+@media (max-width:768px){
+
+footer{
+
+    padding:70px 20px;
+
+}
+
+footer h2{
+
+    font-size:1.8rem;
+
+}
+
+footer p{
+
+    font-size:.95rem;
+
+}
+
+footer small{
+
+    font-size:.65rem;
+    letter-spacing:2px;
+
+}
+
+}
+
+@media (max-width:1100px){
+
+header{
+    padding:0 18px;
+}
+
+nav{
+    gap:16px;
+}
+
+nav a{
+    font-size:.68rem;
+    letter-spacing:1px;
+}
+
+.logo{
+    font-size:.8rem;
+    letter-spacing:3px;
+}
+
+}
+
+/* ==========================
+        QUOTE HOVERS
+========================== */
+
+.hero-quote,
+.research-quote,
+.philosophy-box,
+.quote{
+    transition:all .35s ease;
+}
+
+.hero-quote:hover{
+    transform:translateY(-4px);
+}
+
+.hero-quote:hover .greek{
+    color:#52F2B8;
+}
+
+.hero-quote:hover .translation{
+    color:#F8FAFC;
+}
+
+.hero-quote:hover span{
+    color:#9EDFC5;
+}
+
+.research-quote:hover{
+    transform:translateY(-4px);
+}
+
+.research-quote:hover p{
+    color:#F8FAFC;
+}
+
+.research-quote:hover span{
+    color:#52F2B8;
+}
+
+.philosophy-box:hover{
+    transform:translateY(-5px);
+}
+
+.philosophy-box:hover h2{
+    color:#52F2B8;
+}
+
+.philosophy-box:hover p{
+    color:#F8FAFC;
+}
+
+.philosophy-box:hover span{
+    color:#52F2B8;
+}
+
+.quote:hover{
+    transform:translateY(-5px);
+}
+
+.quote:hover h2{
+    color:#52F2B8;
+}
